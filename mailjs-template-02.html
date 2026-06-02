@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎉 You're a Giveaway Winner!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            font-family: 'DM Sans', sans-serif;
+            color: #f0ece4;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .wrapper {
+            max-width: 620px;
+            margin: 40px auto;
+            background: #141414;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, #1a0a00 0%, #3d1500 50%, #1a0a00 100%);
+            padding: 56px 40px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255, 160, 50, 0.18) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 30% at 80% 80%, rgba(255, 100, 20, 0.10) 0%, transparent 60%);
+        }
+
+        .confetti-row {
+            font-size: 28px;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .trophy {
+            font-size: 72px;
+            display: block;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.1;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #ffb347, #ff6b00, #ffcc00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            margin-top: 12px;
+            font-size: 15px;
+            color: #c9a87a;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            position: relative;
+        }
+
+        /* ── DIVIDER ── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ff6b00 30%, #ffcc00 50%, #ff6b00 70%, transparent);
+        }
+
+        /* ── BODY ── */
+        .body {
+            padding: 40px 40px 32px;
+        }
+
+        .greeting {
+            font-size: 22px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .greeting span {
+            color: #ff8c3a;
+        }
+
+        .body p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #b0a898;
+            margin-bottom: 16px;
+        }
+
+        /* ── PRIZE CARD ── */
+        .prize-card {
+            background: linear-gradient(135deg, #1e1200, #2a1900);
+            border: 1px solid #5a3010;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin: 28px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prize-card::before {
+            content: '★';
+            position: absolute;
+            right: 20px;
+            top: 16px;
+            font-size: 48px;
+            color: rgba(255, 160, 50, 0.08);
+        }
+
+        .prize-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ff8c3a;
+            margin-bottom: 8px;
+        }
+
+        .prize-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .prize-desc {
+            font-size: 13px;
+            color: #8a7a6a;
+        }
+
+        /* ── DETAILS TABLE ── */
+        .details {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 24px 0;
+        }
+
+        .details-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #606060;
+            margin-bottom: 18px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #252525;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-key {
+            font-size: 13px;
+            color: #606060;
+            font-weight: 500;
+        }
+
+        .detail-val {
+            font-size: 13px;
+            color: #e0d8cc;
+            font-weight: 600;
+        }
+
+        /* ── CTA ── */
+        .cta-wrap {
+            text-align: center;
+            margin: 32px 0 8px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 44px;
+            background: linear-gradient(135deg, #ff6b00, #ff9d00);
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+
+        .cta-note {
+            font-size: 12px;
+            color: #505050;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: #0d0d0d;
+            border-top: 1px solid #1e1e1e;
+            padding: 28px 40px;
+            text-align: center;
+        }
+
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #ff8c3a;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: #404040;
+            line-height: 1.7;
+        }
+
+        .footer a {
+            color: #606060;
+            text-decoration: underline;
+        }
+
+        .socials {
+            margin: 14px 0;
+            font-size: 20px;
+            letter-spacing: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="confetti-row">🎊 🥳 🎊</div>
+            <span class="trophy">🏆</span>
+            <h1>You <span>Won!</span></h1>
+            <p class="subtitle">Congratulations, Champion</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- BODY -->
+        <div class="body">
+
+            <p class="greeting">Hey <span>{{winner_name}}</span>,</p>
+
+            <p>
+                We have some absolutely amazing news — out of thousands of incredible entries,
+                <strong style="color:#fff;">your name was drawn as the winner</strong> of our
+                <strong style="color:#ff8c3a;">{{giveaway_name}}</strong> giveaway!
+            </p>
+
+            <p>
+                This is not a drill. 🎉 You've officially won and we couldn't be more excited to celebrate this with
+                you!
+            </p>
+
+            <!-- PRIZE CARD -->
+            <div class="prize-card">
+                <div class="prize-label">🎁 Your Prize</div>
+                <div class="prize-name">{{prize_name}}</div>
+                <div class="prize-desc">{{prize_description}}</div>
+            </div>
+
+            <p>
+                To claim your prize, please respond to this email or click the button below
+                <strong style="color:#fff;">within {{claim_deadline}} days</strong>.
+                After that, the prize may be forfeited and awarded to an alternate winner.
+            </p>
+
+            <!-- WINNER DETAILS -->
+            <div class="details">
+                <div class="details-title">Winner Details</div>
+                <div class="detail-row">
+                    <span class="detail-key">Winner</span>
+                    <span class="detail-val">{{winner_name}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-key">Giveaway</span>
+                    <span class="detail-val">{{giveaway_name}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-key">Draw Date</span>
+                    <span class="detail-val">{{draw_date}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-key">Claim Deadline</span>
+                    <span class="detail-val">{{claim_deadline}} days from now</span>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-wrap">
+                <a href="{{claim_url}}" class="cta-btn">🎁 Claim My Prize</a>
+            </div>
+            <p class="cta-note">Or reply directly to this email to get started.</p>
+
+            <p style="margin-top: 28px;">
+                Thank you so much for being part of our community. Winners like you are what make everything we do
+                worthwhile. 💛
+            </p>
+
+            <p>
+                With excitement,<br />
+                <strong style="color:#fff;">{{sender_name}}</strong><br />
+                <span style="color:#606060; font-size:13px;">{{sender_title}} · {{brand_name}}</span>
+            </p>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="brand">{{brand_name}}</div>
+            <div class="socials">📸 🐦 💬</div>
+            <p>
+                You received this email because you participated in our giveaway.<br />
+                <a href="{{unsubscribe_url}}">Unsubscribe</a> · <a href="{{privacy_url}}">Privacy Policy</a>
+            </p>
+            <p style="margin-top:10px; color:#2e2e2e;">© {{year}} {{brand_name}}. All rights reserved.</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
